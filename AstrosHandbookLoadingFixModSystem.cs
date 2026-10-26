@@ -8,8 +8,6 @@ public class AstrosHandbookLoadingFixModSystem : ModSystem
 {
     private Harmony? harmony;
     
-    public static ILogger? Logger { get; private set; }
-    
     /// <summary>
     /// only load on client
     /// </summary>
@@ -27,7 +25,6 @@ public class AstrosHandbookLoadingFixModSystem : ModSystem
     public override void StartClientSide(ICoreClientAPI api)
     {
         //Mod.Logger.Notification("woooooo im a ghooooost boooooo");
-        Logger = Mod.Logger;
         harmony = new Harmony(Mod.Info.ModID);
         harmony.PatchAll(typeof(AstrosHandbookLoadingFixModSystem).Assembly);
     }
@@ -38,6 +35,5 @@ public class AstrosHandbookLoadingFixModSystem : ModSystem
     public override void Dispose()
     {
         harmony?.UnpatchAll(Mod.Info.ModID);
-        Logger = null;
     }
 }
