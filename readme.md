@@ -2,6 +2,8 @@
 
 a Vintage Story mod that stops the handbook from freezing your game. 
 
+made for Vintage Story 1.22.7
+
 ## what it does
 
 - the game searches the entire guidebook on the main thread every time you open it, and with 10000 pages that makes the game freeze. 
